@@ -812,3 +812,16 @@ var carousel = function(){
   }
 
 }();
+
+function fnShowBadgeProd(IDProduto,PrecoOri,PrecoNum){
+var oBadge=document.getElementById("DivProd"+IDProduto);
+if(oBadge){
+var sBadges="";
+if(oBadge.hasAttribute("data-sale") && PrecoOri>PrecoNum && (getPromocao() > 1))sBadges+="<div class='badgeProm' title='Oferta'>-"+ getPromocao() +"%</div>";
+if(oBadge.hasAttribute("data-release"))sBadges+="<div class='badgeNew' title='Lançamento'>NOVO</div>";
+if(oBadge.hasAttribute("data-highlight"))sBadges+="<div class='badgeHigh' title='Destaque'>&#9733;&#9733;&#9733;</div>";
+if(sBadges!="")oBadge.innerHTML+="<div class='badgesProd'>"+ sBadges +"</div>";
+}
+function getPromocao(){return parseInt((PrecoOri-PrecoNum)/PrecoOri*100);}
+};
+

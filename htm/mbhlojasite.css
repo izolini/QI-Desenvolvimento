@@ -1,8 +1,11 @@
 /* Reset */
 html{font-size: 16px;}
-body{font-family: "Helvetica Neue",Helvetica,Arial,Roboto,sans-serif;background-color:#f0eeec;margin:0;}
-header{background-color: #e5e5e5;max-width: 600px; margin:0 auto; padding-bottom: 10px;}
-footer,section{max-width: 600px; margin:0 auto;background-color: <tag-FCCSSColor8>;}
+body{font-family: "Helvetica Neue",Helvetica,Arial,Roboto,sans-serif;background-color:#FFE7D1;margin:0;}
+/* body{font-family: "Helvetica Neue",Helvetica,Arial,Roboto,sans-serif;background-color:#f0eeec;margin:0;} */
+header{background-color: #F1DCC9;max-width: 600px; margin:0 auto; padding-bottom: 10px;}
+/* header{background-color: #e5e5e5;max-width: 600px; margin:0 auto; padding-bottom: 10px;} */
+footer,section{max-width: 600px; margin:0 auto;background-color: #F1DCC9;}
+/* footer,section{max-width: 600px; margin:0 auto;background-color: <tag-FCCSSColor8>;} */
 #idTitTextoFC{font-size:1.5rem;font-weight:700;}
 
 *{box-sizing: border-box;}
@@ -31,6 +34,7 @@ img[data-src*="/lojas/"][src$="/images/loading.gif"]{max-width: 16px!important;}
 .amp-main{
   padding-top: 15px;
   height: 100%;
+  background-color: #FFE7D1;
 }
 
 .FCHome .amp-main, .HighlightsPage .amp-main{
@@ -64,7 +68,7 @@ img[data-src*="/lojas/"][src$="/images/loading.gif"]{max-width: 16px!important;}
   overflow-y: auto;
   z-index: 9999;
   width: 250px;
-  background-color: #efefef;
+  background-color: #e8e8e8;
   left: -250px;
   top: 0;
   padding-top: 10px;
@@ -275,15 +279,18 @@ footer .amp-nav > a:nth-of-type(1){
 
 /* Mensagem de alerta de entregas apenas em BSB e região */
 .amp-entrega {
-  padding: 0 auto;
+  padding: 1px 0px 1px 0px;
   width: 100%;
   font-family:'Roboto',sans-serif;
   font-weight:700;
   font-size:1em;
   background-color: #f44336; /* Red */
   color: white;
-  margin-bottom: 10px;
   text-align:center
+}
+
+.amp-entrega p {
+  font-weight: 400;
 }
 
 /* Botao para ver todos os pratos no topo da tela do mobile */

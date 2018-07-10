@@ -1,3 +1,19 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Modal ultracongelamento -->
+<div id="modal" class="hide">
+    <div class="modal-bg"></div>
+    <div class="modal-content">
+        <p><strong>Ultracongelamento</strong>- Vamos explicar para você como conservamos as refeições que produzimos:</p><br>
+        <p>Primeiro embalamos à vácuo para garantir a manutenção das propriedades nutricionais, textura e sabor dos alimentos. Como a maioria dos congeladores domésticos são pequenos, o vácuo também vai ajudar a deixar a embalagem no tamanho certo!</p><br>
+        <p>Depois usamos o ultracongelamento como forma de conservação natural: em menos de 40 minutos, exposto a uma temperatura de -30C, a refeição protegida pelo vácuo congela uniformemente.</p><br>
+        <h3>O ultracongelamento é uma técnica avançada para armazenamento de alimentos.</h3><br>
+        <p> Nossos freezers domésticos não são capazes de congelar alimentos de maneira eficiente, pois o processo de congelamento em um freezer normal é lento, permitindo que cristais de gelo se formem no produto, que ao ser descongelado perderá  nutrientes eliminados junto com a água - sem falar nos danos à textura, cor, sabor e os perigos de contaminação.</p><br>
+        <p>Sem a formação de cristais de gelo, a baixíssima temperatura atingida com o ultracongelamento impede o crescimento bacteriano e retarda a maioria das reações químicas e enzimáticas que alteram a qualidade da comida. Melhor ainda: não precisa de nenhum conservante, corante ou estabilizante, coisa que abominamos na Saudável com Você.</p><br>
+        <p>Aliado à escolha criteriosa dos insumos e à preparação e cozimento monitorado por nutricionistas, nossa embalagem garante a oferta perfeita de alimentos planejados saborosos e práticos, de altíssimo valor nutricional.</p>
+        <a class="modal-close">&#215;</a>
+    </div>
+</div>
+
 <!-- Begin Banners -->
 <div id="FC-HideHomeBanners" style="display:none;">
   <link rel="stylesheet" href="/js/magictoolbox/magicslideshowv2/magicslideshow.css?cccfc=1" /><script src="/js/magictoolbox/magicslideshowv2/magicslideshow.js?cccfc=1"></script>
@@ -6,7 +22,7 @@
       <div id="idBannerImgFC" class="BannerImgFC">
         <div class="MagicSlideshow" data-options="width:100%;height:18.6%;effect:fade;selectors:true;caption:false;slide-duration:8000;arrows:false;">
           <!-- <a href="/prod,idloja,<IDLoja>,promocao,1,ofertas.htm"><img src="<PathTo file="images/fundotop.jpg">"></a> -->
-          <a href="/acompanhamento-health-coaching-58523196"><img src="<PathTo file="images/banner_healthcoaching.jpg">"></a>
+          <a href="/c/categorias"><img src="<PathTo file="images/bannerdesconto.jpg">"></a>
           <a href="/c/categorias"><img src="<PathTo file="images/banner300.jpg">"></a>
           <a href="/c/categorias"><img src="<PathTo file="images/banner400.jpg">"></a>
        </div> 
@@ -57,7 +73,11 @@
 </div>
 </div>
 <!-- End Carrossel -->
+<!-- Apresentacao -->
+<h1 style="text-align:center; padding: 10px; font-size:1.2em; border:2px solid black; background-color:#fffad6">
+<p>A Saudável com Você vende marmitas fitness criadas por nutricionistas, sem uso de conservantes ou aditivos de qualquer natureza, mantendo-as 100% saudáveis e saborosas através de <button id="btAbrirModal" class="btClean">ultracongelamento a vácuo</button>. Conheça nossos pratos low carb, sem glúten e sem lactose, e siga-nos no <a href="https://www.instagram.com/qicomidadeverdade" target="_blank">Instagram</a>.</p><br>Atendemos Brasília-DF e região.</h1>
 
+<div class="row FullDoubleSpaceFC"></div>
 <!-- 12 produtos randomicos -->
 <div class="row">
   <div class="col-small-12 col-medium-6 col-large-4 col-mlarge-3 col-xlarge-3"><prod out="p255" em="rand"></div>
@@ -85,39 +105,23 @@
 <!-- Begin Script de Alerta de Entrega -->
 
 <script>
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+var btAbrirModal = $("#btAbrirModal");
+var modal = $("#modal");
+var modalClose = $("#modal .modal-close");
+var modalBackground = $("#modal .modal-bg");
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+btAbrirModal.click(function () {
+    modal.fadeIn(500);
+});
 
-function checkCookie() {
-    var sessao = getCookie("saudavelcomvc");
-    var sessaoTemp = localStorage.getItem("sessao");
-    console.log(sessao);
-    console.log(sessaoTemp);
-    if (sessao == "") {
-        setTimeout('alert("ATENÇÃO\\n\\nNossos alimentos são embalados à vácuo para garantir prioridades nutricionais, aroma e sabor.\\nPor este motivo, visando manter a alta qualidade dos produtos, nossa equipe entrará em contato após sua compra para combinar data e horário exatos para entrega.\\n\\nIMPORTANTE: Entregas somente para Brasília-DF e região (CEPs 70000-000 a 73499-999).\\n\\nAsa Norte e Asa Sul\\nSudoeste e Cruzeiro\\nGuará, Águas Claras e Taguatinga\\n\\nObs: Regiões adjacentes sob consulta.")',1000);
-        setCookie("saudavelcomvc", sessaoTemp, 365);
-    }
-}
-checkCookie();
+modalClose.click(function () {
+    modal.fadeOut(500);
+});
+
+//Caso queira que o dialogo feche ao realizar um click fora dele.
+//
+modalBackground.click(function () {
+    modal.fadeOut(500);
+});
 </script>
-<!-- End of Script de Alerta de Entrega -->
 <!-- Begin Home -->
